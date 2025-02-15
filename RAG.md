@@ -13,6 +13,8 @@
 ### 2.1 Enterprise Applications
 
 - Internal knowledge base chatbots
+- Legal document analysis
+- Medical research assistance
 
 ## 3. RAG Architecture and Principles
 
@@ -43,21 +45,5 @@ basic flow :
    - Prompt: Template combining query and retrieved context
    - LLM: Large Language Model for generating responses
    - Answer: Final response based on context and query
-
-### 3.2 Key Considerations
-
-- Chunking strategies
-- Embedding model selection
-- Vector database choices
-- Prompt engineering techniques
-- Evaluation metrics
-
-### 3.3 Advanced Topics
-
-- Hybrid search methods
-- Re-ranking strategies
-- Multi-vector retrieval
-- Semantic caching
-- RAG chain optimization
 
 ## 4. DIFY DEMO for RAG
