@@ -1,18 +1,63 @@
-```mermaid
-graph LR
-LD[Local Documents] --> UL[Unstructured Loader]
-UL --> TS[Text Splitter]
-TS --> TC[Text Chunks]
-TC --> EM1[Embedding Model]
-EM1 --> IX[Indexing]
-IX --> VS[Vector Store]
+# Retrieval-Augmented Generation (RAG) Knowledge Sharing
 
-    Q[Query] --> EM2[Embedding Model]
-    EM2 --> QV[Query Vector]
-    QV --> VS2[Vector Similarity]
-VS --> VS2
-VS2 --> RT[Related Text Chunks]
-RT --> P[Prompt]
-P --> LLM[LLM]
-LLM --> A[Answer]
-```
+## 1. Why Do We Need RAG?
+
+### 1.1 Limitations of Traditional LLMs
+
+- Hallucination issues
+- High cost for fine-tuning
+- Privacy concerns with sensitive data
+
+## 2. Use Cases for RAG
+
+### 2.1 Enterprise Applications
+
+- Internal knowledge base chatbots
+
+## 3. RAG Architecture and Principles
+
+### 3.1 Basic Components
+
+basic flow :
+![basic flow](./imgs/rag_flow.png)
+
+1. Document Processing Pipeline
+
+   - Local Documents: Source materials to be processed
+   - Unstructured Loader: Converts various document formats into text
+   - Text Splitter: Breaks documents into manageable chunks
+   - Text Chunks: Smaller segments of text
+   - Embedding Model: Converts text into vector representations
+   - Indexing: Organizes vectors for efficient retrieval
+   - Vector Store: Database for storing and searching vectors
+
+2. Query Processing Pipeline
+
+   - Query: User input or question
+   - Embedding Model: Same model used to convert query to vector
+   - Query Vector: Vector representation of the query
+   - Vector Similarity: Compares query vector with stored vectors
+   - Related Text Chunks: Retrieved relevant context
+
+3. Response Generation
+   - Prompt: Template combining query and retrieved context
+   - LLM: Large Language Model for generating responses
+   - Answer: Final response based on context and query
+
+### 3.2 Key Considerations
+
+- Chunking strategies
+- Embedding model selection
+- Vector database choices
+- Prompt engineering techniques
+- Evaluation metrics
+
+### 3.3 Advanced Topics
+
+- Hybrid search methods
+- Re-ranking strategies
+- Multi-vector retrieval
+- Semantic caching
+- RAG chain optimization
+
+## 4. DIFY DEMO for RAG
