@@ -20,41 +20,49 @@
 
 ### 3.1 Basic Components
 
-basic flow :
-![basic flow](./imgs/rag_flow.png)
-basic concept:
+#### Overview Diagram
 
-1. Embedding Model: Converts text into numerical vectors that capture semantic meaning
-   - Processes entire text chunks, not just individual tokens
-   - Captures contextual relationships between words
-   - Generates fixed-length vectors regardless of input size
-2. Vector Store: Database for storing and searching vectors
-3. Tokenization: Preprocessing step that breaks text into tokens (words/subwords)
-   - Occurs before embedding
+![RAG Flow Diagram](./imgs/rag_flow.png)
+
+#### Core Concepts
+
+1. **Embedding Model**
+
+   - Converts text into numerical vectors
+   - Processes entire text chunks
+   - Captures contextual relationships
+   - Generates fixed-length vectors
+
+2. **Vector Store**
+
+   - Database for storing and searching vectors
+
+3. **Tokenization**
+   - Preprocessing step that breaks text into tokens
    - Helps handle out-of-vocabulary words
-4. Semantic Understanding: Embedding models capture meaning beyond just word presence
 
-5. Document Processing Pipeline
+#### Document Processing Pipeline
 
-   - Local Documents: Source materials to be processed
-   - Unstructured Loader: Converts various document formats into text
-   - Text Splitter: Breaks documents into manageable chunks
-   - Text Chunks: Smaller segments of text
-   - Embedding Model: Converts text into vector representations
-   - Indexing: Organizes vectors for efficient retrieval
-   - Vector Store: Database for storing and searching vectors
+1. **Local Documents**: Source materials
+2. **Unstructured Loader**: Converts formats to text
+3. **Text Splitter**: Breaks into chunks
+4. **Text Chunks**: Manageable segments
+5. **Embedding Model**: Converts to vectors
+6. **Indexing**: Organizes vectors
+7. **Vector Store**: Stores vectors
 
-6. Query Processing Pipeline
+#### Query Processing Pipeline
 
-   - Query: User input or question
-   - Embedding Model: Same model used to convert query to vector
-   - Query Vector: Vector representation of the query
-   - Vector Similarity: Compares query vector with stored vectors
-   - Related Text Chunks: Retrieved relevant context
+1. **Query**: User input
+2. **Embedding Model**: Converts query to vector
+3. **Query Vector**: Vector representation
+4. **Vector Similarity**: Compares vectors
+5. **Related Text Chunks**: Retrieved context
 
-7. Response Generation
-   - Prompt: Template combining query and retrieved context
-   - LLM: Large Language Model for generating responses
-   - Answer: Final response based on context and query
+#### Response Generation
+
+1. **Prompt**: Combines query and context
+2. **LLM**: Generates response
+3. **Answer**: Final output
 
 ## 4. DIFY DEMO for RAG
