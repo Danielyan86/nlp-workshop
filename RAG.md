@@ -103,21 +103,40 @@ flowchart TD
 
 #### Vector Embedding Example
 
-Suppose we have a text chunk (512 Tokens) converted to a vector:
+This example demonstrates how text is processed through the RAG pipeline:
 
-Chunk 1: "The Eiffel Tower is in Paris, France."
-Tokenized: ["The", "Eiffel", "Tower", "is", "in", "Paris", ",", "France", "."]
-Embedding Vector (1536D): [0.23, -0.75, 0.12, ...] # 1536 dimensions
+1. **Document Processing**
 
-Then store it in Vector Store.
+   ```text
+   Input Text: "The Eiffel Tower is in Paris, France."
 
-When user queries:
+   Tokenized: [
+     "The", "Eiffel", "Tower", "is", "in",
+     "Paris", ",", "France", "."
+   ]
 
-Query: "Where is the Eiffel Tower?"
-Tokenized: ["Where", "is", "the", "Eiffel", "Tower", "?"]
-Query Vector (1536D): [0.22, -0.74, 0.13, ...]
+   Embedding Vector (1536D):
+   [0.23, -0.75, 0.12, ...] # 1536 dimensions
+   ```
 
-The vector database calculates similarity scores to find relevant text chunks, then returns them to LLM for response generation.
+2. **Query Processing**
+
+   ```text
+   User Query: "Where is the Eiffel Tower?"
+
+   Tokenized: [
+     "Where", "is", "the", "Eiffel",
+     "Tower", "?"
+   ]
+
+   Query Vector (1536D):
+   [0.22, -0.74, 0.13, ...]
+   ```
+
+3. **Retrieval Process**
+   - Vector database calculates similarity scores
+   - Finds relevant text chunks based on vector similarity
+   - Returns matched content to LLM for response generation
 
 #### Document Processing Pipeline
 
