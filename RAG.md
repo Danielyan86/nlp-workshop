@@ -7,6 +7,7 @@
     - [3.1 Basic Components](#31-basic-components)
       - [Overview Diagram](#overview-diagram)
       - [Core Concepts](#core-concepts)
+      - [Vector Embedding Example](#vector-embedding-example)
       - [Document Processing Pipeline](#document-processing-pipeline)
       - [Query Processing Pipeline](#query-processing-pipeline)
       - [Response Generation Pipeline](#response-generation-pipeline)
@@ -99,6 +100,24 @@ flowchart TD
 
 3. **Vector Store**
    - Database for storing and searching vectors
+
+#### Vector Embedding Example
+
+Suppose we have a text chunk (512 Tokens) converted to a vector:
+
+Chunk 1: "The Eiffel Tower is in Paris, France."
+Tokenized: ["The", "Eiffel", "Tower", "is", "in", "Paris", ",", "France", "."]
+Embedding Vector (1536D): [0.23, -0.75, 0.12, ...] # 1536 dimensions
+
+Then store it in Vector Store.
+
+When user queries:
+
+Query: "Where is the Eiffel Tower?"
+Tokenized: ["Where", "is", "the", "Eiffel", "Tower", "?"]
+Query Vector (1536D): [0.22, -0.74, 0.13, ...]
+
+The vector database calculates similarity scores to find relevant text chunks, then returns them to LLM for response generation.
 
 #### Document Processing Pipeline
 
