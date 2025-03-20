@@ -9,7 +9,7 @@
       - [Core Concepts](#core-concepts)
       - [Document Processing Pipeline](#document-processing-pipeline)
       - [Query Processing Pipeline](#query-processing-pipeline)
-      - [Response Generation](#response-generation)
+      - [Response Generation Pipeline](#response-generation-pipeline)
   - [4. DIFY DEMO for RAG](#4-dify-demo-for-rag)
     - [4.1 Main Features](#41-main-features)
     - [4.2 RAG Implementation Steps](#42-rag-implementation-steps)
@@ -103,28 +103,27 @@ flowchart TD
 
 #### Document Processing Pipeline
 
-1. **Local Documents**: Source materials, e.g: pdf, word, txt
-2. **Unstructured Loader**: Converts formats to text
-3. **Text Splitter**: Breaks into chunks
-4. **Text Chunks**: Manageable segments
-5. **Tokenization**: Breaks text into tokens
-6. **Embedding Model**: Converts to vectors
-7. **Indexing**: Organizes vectors
-8. **Vector Store**: Stores vectors
+1. **Local Documents**: Source materials (e.g., PDF, Word, TXT)
+2. **Unstructured Loader**: Converts file formats to plain text
+3. **Text Splitting**: Breaks text into manageable chunks for processing
+4. **Tokenization**: Breaks text into tokens
+5. **Embedding Model**: Converts tokens to numerical vectors
+6. **Indexing**: Organizes vectors for efficient retrieval
+7. **Vector Store**: Stores and manages vector data
 
 #### Query Processing Pipeline
 
-1. **Query**: User input
-2. **Embedding Model**: Converts query to vector
-3. **Query Vector**: Vector representation
-4. **Vector Similarity**: Compares vectors
-5. **Related Text Chunks**: Retrieved context
+1. **Query Input**: User's natural language query
+2. **Query Tokenization**: Breaks query into tokens
+3. **Query Embedding**: Converts query tokens to vector
+4. **Vector Search**: Finds similar vectors in Vector Store
+5. **Context Retrieval**: Retrieves relevant text chunks
 
-#### Response Generation
+#### Response Generation Pipeline
 
-1. **Prompt**: Combines query and context
-2. **LLM**: Generates response
-3. **Answer**: Final output
+1. **Prompt Construction**: Combines query and retrieved context
+2. **LLM Processing**: Generates response using the prompt
+3. **Response Output**: Final answer to the user
 
 ## 4. DIFY DEMO for RAG
 
