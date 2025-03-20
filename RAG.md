@@ -22,90 +22,50 @@
 
 #### Overview Diagram
 
-![RAG Flow Diagram](./imgs/rag_flow.png)
+```mermaid
+flowchart TD
+    %% Document Processing
+    subgraph subGraph0["📄 Document Processing"]
+        B["📥 Unstructured Loader"]
+        C["✂ Text Processing"]
+    end
 
-#### Core Concepts
+    %% Vector Storage
+    subgraph subGraph1["📂 Vector Storage"]
+        E["🔢 Embedding Model"]
+        F["📊 Indexing"]
+        G["🗃️ Vector Store"]
+    end
 
-1. **Tokenization**
+    %% Query & Retrieval
+    subgraph subGraph2["🔍 Query & Retrieval"]
+        H["🔍 Query"]
+        I["🔢 Embedding Model"]
+        J["🧩 Query Vector"]
+        K["🔎 Vector Similarity"]
+        L["📑 Related Text Chunks"]
+    end
 
-   - Preprocessing step that breaks text into tokens
-   - Helps handle out-of-vocabulary words
+    %% Response Generation
+    subgraph subGraph3["🤖 Response Generation"]
+        M["📝 Prompt"]
+        N["🤖 LLM"]
+        O["📩 Answer"]
+    end
 
-2. **Embedding Model**
-
-   - Converts text into numerical vectors
-
-3. **Vector Store**
-   - Database for storing and searching vectors
-
-#### Document Processing Pipeline
-
-1. **Local Documents**: Source materials, e.g: pdf, word, txt
-2. **Unstructured Loader**: Converts formats to text
-3. **Text Splitter**: Breaks into chunks
-4. **Text Chunks**: Manageable segments
-5. **Tokenization**: Breaks text into tokens
-6. **Embedding Model**: Converts to vectors
-7. **Indexing**: Organizes vectors
-8. **Vector Store**: Stores vectors
-
-#### Query Processing Pipeline
-
-1. **Query**: User input
-2. **Embedding Model**: Converts query to vector
-3. **Query Vector**: Vector representation
-4. **Vector Similarity**: Compares vectors
-5. **Related Text Chunks**: Retrieved context
-
-#### Response Generation
-
-1. **Prompt**: Combines query and context
-2. **LLM**: Generates response
-3. **Answer**: Final output
-
-## 4. DIFY DEMO for RAG
-
-DIFY is an open-source LLM application development platform that simplifies the creation of AI applications.
-
-### 4.1 Main Features
-
-- No-code/Low-code development interface
-- Built-in RAG pipeline support
-- Various LLM provider support
-- Visual knowledge base management
-
-### 4.2 RAG Implementation Steps
-
-1. **Environment Setup**
-
-   - Start and setup DIFY in local environment
-
-2. **Knowledge Base Creation**
-
-3. **Document Processing**
-
-   - Upload documents
-   - Configure chunk settings
-   - Select index mode
-     ![rag_index](./imgs/rag_index.jpg)
-
-4. **Select the Embedding Model**
-
-5. **Retrieval Settings**
-
-   - Vector search: Finds similar content by comparing document vectors in high-dimensional space
-   - Full-text search: Traditional keyword-based search across document content
-
-6. **Chunk Preview**
-   ![rag_preview](./imgs/dify_RAG_preview.jpg)
-7. Knowledge created
-   ![Knowledge created](./imgs/dify_knowledge_created.png)
-
-### 4.3 Verification
-
-1. **Retrieval Testing**
-   ![Retrieval Testing](./imgs/dify_knowledge_retreivial.png)
-
-2. **Chat Testing**
-   ![Chat Without Knowledge](./imgs/dify_without_knowledge_example.png)
-   ![Chat With Knowledge](./imgs/dify_with_knowledge_example.png)
+    %% Flow connections
+    A["📂 Local Documents"] -->|Load Documents| B
+    B -->|Split & Chunk Text| C
+    C -->|Tokenize Text| D["🔠 Tokenization"]
+    D -->|Convert to Vector| E
+    E -->|Indexing| F
+    F -->|Store in DB| G
+    H -->|Convert to Vector| I
+    I -->|Generate Query Vector| J
+    J -->|Vector Similarity Search| K
+    K -->|Retrieve Related Chunks| L
+    L -->|Prepare Prompt| M
+    M -->|Generate Response| N
+    N --> O
+    G --> K
+```
