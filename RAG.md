@@ -92,7 +92,6 @@ flowchart TD
 1. **Tokenization**
 
    - Breaks text into tokens
-   - Helps handle out-of-vocabulary words
 
 2. **Embedding Model**
 
