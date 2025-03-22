@@ -75,17 +75,17 @@ flowchart TD
     end
 
     %% Flow connections
-    A["📂 Local Documents"] -->|Load Documents| B
-    B -->|Split & Chunk Text| C
-    C -->|Process Text| E
-    E -->|Convert to Vector| F
-    F -->|Indexing| G
-    H -->|Process Query| I
-    I -->|Convert to Vector| J
-    J -->|Vector Similarity Search| K
-    K -->|Retrieve Related Chunks| L
-    L -->|Prepare Prompt| M
-    M -->|Generate Response| N
+    A["📂 Local Documents"] --> B
+    B --> C
+    C --> E
+    E --> F
+    F --> G
+    H --> I
+    I --> J
+    J --> K
+    K --> L
+    L --> M
+    M --> N
     N --> O
     G --> K
 ```
