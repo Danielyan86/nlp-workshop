@@ -90,16 +90,29 @@ flowchart TD
 
 #### Core Concepts
 
-1. **Tokenization**
+1. **Document Processing**
 
-   - Breaks text into tokens
+   - Converts various document formats into plain text
+   - Splits text into manageable chunks
 
 2. **Embedding Model**
 
    - Converts text into numerical vectors
+   - Used for both document and query processing
 
 3. **Vector Store**
-   - Database for storing and searching vectors
+
+   - Database for storing document vectors
+   - Enables efficient similarity search
+
+4. **Text Search**
+
+   - Retrieves relevant documents using vector similarity
+   - Returns context for LLM processing
+
+5. **Response Generation**
+   - Combines retrieved context with query
+   - Generates contextual responses using LLM
 
 #### Vector Embedding Example
 
@@ -210,4 +223,3 @@ DIFY is an open-source LLM application development platform that simplifies the 
      ![Chat Without Knowledge](./imgs/dify_without_knowledge_example.png)
    - **With RAG Example**
      ![Chat With Knowledge](./imgs/dify_with_knowledge_example.png)
-
