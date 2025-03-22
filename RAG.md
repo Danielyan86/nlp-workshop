@@ -77,8 +77,7 @@ flowchart TD
     %% Flow connections
     A["📂 Local Documents"] -->|Load Documents| B
     B -->|Split & Chunk Text| C
-    C -->|Tokenize Text| D["🔠 Tokenization"]
-    D -->|Convert to Vector| E
+    C -->|Convert to Vector| E
     E -->|Indexing| F
     F -->|Store in DB| G
     H -->|Convert to Vector| I
