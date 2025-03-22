@@ -22,9 +22,12 @@
 
 ### 1.1 Limitations of Traditional LLMs
 
-- Hallucination issues
-- High cost for fine-tuning
-- Privacy concerns with sensitive data
+1. **Hallucination Issues**
+
+   - Outdated training data
+   - Unable to access private data
+
+2. **High Cost for Fine-tuning**
 
 ## 2. Use Cases for RAG
 
