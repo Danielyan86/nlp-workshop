@@ -55,7 +55,6 @@ flowchart TD
     subgraph subGraph1["📂 Vector Storage"]
         E["🔢 Embedding Model"]
         G["🗃️ Vector Store"]
-        F["📊 Indexing"]
     end
 
     %% Query & Retrieval
@@ -79,7 +78,6 @@ flowchart TD
     B --> C
     C --> E
     E --> G
-    G --> F
     H --> I
     I --> J
     J --> K
@@ -88,7 +86,6 @@ flowchart TD
     M --> N
     N --> O
     G --> K
-    F --> K
 ```
 
 #### Core Concepts
@@ -148,8 +145,7 @@ This example demonstrates how text is processed through the RAG pipeline:
 3. **Text Splitting**: Breaks text into manageable chunks for processing
 4. **Tokenization**: Breaks text into tokens
 5. **Embedding Model**: Converts tokens to numerical vectors
-6. **Indexing**: Organizes vectors for efficient retrieval
-7. **Vector Store**: Stores and manages vector data
+6. **Vector Store**: Stores and manages vector data
 
 #### Query Processing Pipeline
 
