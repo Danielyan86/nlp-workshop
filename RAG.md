@@ -11,6 +11,7 @@
       - [Document Processing Pipeline](#document-processing-pipeline)
       - [Query Processing Pipeline](#query-processing-pipeline)
       - [Response Generation Pipeline](#response-generation-pipeline)
+      - [Vector Store Details](#vector-store-details)
   - [4. DIFY DEMO for RAG](#4-dify-demo-for-rag)
     - [4.1 Main Features](#41-main-features)
     - [4.2 RAG Implementation Steps](#42-rag-implementation-steps)
@@ -173,6 +174,37 @@ This example demonstrates how text is processed through the RAG pipeline:
 1. **Prompt Construction**: Combines query and retrieved context
 2. **LLM Processing**: Generates response using the prompt
 3. **Response Output**: Final answer to the user
+
+#### Vector Store Details
+
+In a RAG system, each text chunk is converted into a vector and stored in the vector database along with its original content (or reference). Typically, each record contains:
+
+| Field               | Description                                          |
+| ------------------- | ---------------------------------------------------- |
+| id                  | Unique identifier for the chunk (e.g., UUID)         |
+| embedding vector    | Semantic vector (e.g., 768D, 1536D)                  |
+| text / metadata     | Original chunk text (with context)                   |
+| additional metadata | Document title, source, page number, tags (optional) |
+
+Example record:
+
+```json
+{
+    "id": "chunk_001",
+    "embedding": [0.34, -0.12, 0.77, ...],  // high-dimensional vector
+    "text": "The Eiffel Tower is in Paris, France.",
+    "metadata": {
+        "source": "travel_guide.pdf",
+        "page": 23
+    }
+}
+```
+
+This structure enables:
+
+- Efficient vector similarity search
+- Original content retrieval
+- Source tracking and context preservation
 
 ## 4. DIFY DEMO for RAG
 
