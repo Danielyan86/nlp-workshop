@@ -204,7 +204,7 @@ DIFY is an open-source LLM application development platform that simplifies the 
 ### 4.3 Verification
 
 1. **Retrieval Testing**
-   ![Retrieval Testing](./imgs/dify_knowledge_retrieval.png)
+   ![Retrieval Testing](./imgs/dify_knowledge_retreivial.png)
 
 2. **Chat Testing**
    - **Without RAG Example**
