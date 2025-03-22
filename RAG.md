@@ -88,6 +88,7 @@ flowchart TD
     M --> N
     N --> O
     G --> K
+    F --> K
 ```
 
 #### Core Concepts
@@ -213,4 +214,3 @@ DIFY is an open-source LLM application development platform that simplifies the 
      ![Chat Without Knowledge](./imgs/dify_without_knowledge_example.png)
    - **With RAG Example**
      ![Chat With Knowledge](./imgs/dify_with_knowledge_example.png)
-
