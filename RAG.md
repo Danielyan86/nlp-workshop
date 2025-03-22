@@ -2,7 +2,7 @@
   - [1. Why Do We Need RAG?](#1-why-do-we-need-rag)
     - [1.1 Limitations of Traditional LLMs](#11-limitations-of-traditional-llms)
   - [2. Use Cases for RAG](#2-use-cases-for-rag)
-    - [2.1 Enterprise Applications](#21-enterprise-applications)
+    - [2.1 Common Scenarios](#21-common-scenarios)
   - [3. RAG Architecture and Principles](#3-rag-architecture-and-principles)
     - [3.1 Basic Components](#31-basic-components)
       - [Overview Diagram](#overview-diagram)
@@ -28,9 +28,9 @@
 
 ## 2. Use Cases for RAG
 
-### 2.1 Enterprise Applications
+### 2.1 Common Scenarios
 
-- Internal knowledge base chatbots
+- Enterprise knowledge base chatbots
 - Legal document analysis
 - Medical research assistance
 
