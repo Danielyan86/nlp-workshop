@@ -54,8 +54,8 @@ flowchart TD
     %% Vector Storage
     subgraph subGraph1["📂 Vector Storage"]
         E["🔢 Embedding Model"]
-        F["📊 Indexing"]
         G["🗃️ Vector Store"]
+        F["📊 Indexing"]
     end
 
     %% Query & Retrieval
@@ -78,8 +78,8 @@ flowchart TD
     A["📂 Local Documents"] --> B
     B --> C
     C --> E
-    E --> F
-    F --> G
+    E --> G
+    G --> F
     H --> I
     I --> J
     J --> K
@@ -213,3 +213,4 @@ DIFY is an open-source LLM application development platform that simplifies the 
      ![Chat Without Knowledge](./imgs/dify_without_knowledge_example.png)
    - **With RAG Example**
      ![Chat With Knowledge](./imgs/dify_with_knowledge_example.png)
+
