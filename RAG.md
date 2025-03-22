@@ -62,7 +62,7 @@ flowchart TD
         H["🔍 Query"]
         I["🔢 Embedding Model"]
         J["🧩 Query Vector"]
-        K["🔎 Vector Similarity"]
+        K["🔍 Text Search"]
         L["📑 Related Text Chunks"]
     end
 
@@ -210,3 +210,4 @@ DIFY is an open-source LLM application development platform that simplifies the 
      ![Chat Without Knowledge](./imgs/dify_without_knowledge_example.png)
    - **With RAG Example**
      ![Chat With Knowledge](./imgs/dify_with_knowledge_example.png)
+
